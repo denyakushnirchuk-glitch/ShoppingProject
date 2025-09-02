@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.mainbox {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+
+    width: 90%;
+    height: auto;
+    background-color: gray;
+
+    border-radius: 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+    
+
+}
+
+.mainbox div {
+    width: 30%;
+    height: 300px;
+    background-color: blue;
+    border-radius: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 30px;
+}
+.addItem {
+    all: unset;
+    display: block;
+
+    border-radius: 30px;
+    width: 90%;
+    height: 30px;
+    
+    background-color: gray;
+    transition: ease-in-out;
+    transition: 0.5s;
+}
+
+.addItem:hover {
+background-color: lightgrey;
+}
