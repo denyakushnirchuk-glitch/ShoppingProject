@@ -18,7 +18,33 @@ button.addEventListener("click", () => {
     box.appendChild(image);
 
     const pricetag = document.createElement("input");
-    pricetag.placeholder = "20$"
-    pricetag.classList.add("bottom")
-    box.appendChild(pricetag)
+    pricetag.placeholder = "enter the price here"
+    pricetag.classList.add("bottom");
+    box.appendChild(pricetag);
+
+    /* chat gpt bit, to delete soon*/ 
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "image/*";
+    fileInput.style.display = "none"; // hide it
+    image.appendChild(fileInput);
+
+    image.addEventListener("click", () => {
+        fileInput.click();
+    });
+
+     fileInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            image.style.backgroundImage = `url('${event.target.result}')`;
+            image.style.backgroundSize = "contain";
+            image.style.backgroundPosition = "center";
+            image.style.backgroundRepeat = "no-repeat";
+        }
+        reader.readAsDataURL(file);
+    });
+
 });
